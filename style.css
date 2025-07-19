@@ -2,22 +2,40 @@
 .custom-header {
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 350px;
+    flex: 1 0 auto;
+
 }
+
 .header-video-background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
+    z-index: 0;
     object-fit: cover;
     pointer-events: none;
     filter: brightness(0.5);
 }
 .custom-header > .container,
 .custom-header > nav {
+    align-self: flex-end;
+    width: 100%;
+    margin-top: auto;
     position: relative;
-    z-index: 2;
+    z-index: 1;
+    position: relative;
+    z-index: 1;
+}
+/* Video más grande en pantallas grandes */
+@media (min-width: 992px) {
+  .header-video-background {
+    height: 140%; /* Aumenta el alto del video en computadoras */
+    top: -20%;    /* Centra el video verticalmente */
+  }
 }
 /* Fuente Inter para una mejor legibilidad (si no está disponible por defecto en el sistema, se usará una sans-serif) */
 body {
